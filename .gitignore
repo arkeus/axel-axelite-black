@@ -11,3 +11,5 @@ docs
 *.psd
 adobe
 org
+Thumbs.db
+.DS_Store

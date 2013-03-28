@@ -31,7 +31,7 @@ package net.axgl.black.world {
 			preprocessPixels();
 			var terrain:String = buildTerrain();
 			map = new AxTilemap;
-			map.build(terrain, Resource.TILESET, Tile.SIZE, Tile.SIZE, 1);
+			map.build(terrain, Resource.TILESET, Tile.SIZE, Tile.SIZE, 1, 20, 20);
 			return this;
 		}
 

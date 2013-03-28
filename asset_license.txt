@@ -1,0 +1,3 @@
+Assets: (c) Lee Miller - http://iarke.us
+
+While the code released here is under MIT, the assets (images, sound, etc) are NOT released under MIT. You may use the assets of this project for personal use and learning, but may not release them with public projects.
