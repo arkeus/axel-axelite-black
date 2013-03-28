@@ -18,7 +18,7 @@ package net.axgl.black {
 		private var player:Player;
 		
 		override public function create():void {
-			var builder:WorldBuilder = new WorldBuilder(Resource.MAP_GIANT).build();
+			var builder:WorldBuilder = new WorldBuilder(Resource.MAP_TINY).build();
 			//var builder:WorldBuilder = new WorldBuilder(Resource.MAP).build();
 			for (var i:uint = 0; i < COPIES; i++) {
 				this.add(map = builder.map);
