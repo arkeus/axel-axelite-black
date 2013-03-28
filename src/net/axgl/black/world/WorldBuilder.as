@@ -1,10 +1,11 @@
 package net.axgl.black.world {
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
-
+	
 	import net.axgl.black.assets.Resource;
+	import net.axgl.black.util.Config;
 	import net.axgl.black.world.Tile;
-
+	
 	import org.axgl.tilemap.AxTilemap;
 
 	public class WorldBuilder {
@@ -31,7 +32,7 @@ package net.axgl.black.world {
 			preprocessPixels();
 			var terrain:String = buildTerrain();
 			map = new AxTilemap;
-			map.build(terrain, Resource.TILESET, Tile.SIZE, Tile.SIZE, 1, 20, 20);
+			map.build(terrain, Resource.TILESET, Tile.SIZE, Tile.SIZE, 1, Config.SEGMENT_WIDTH, Config.SEGMENT_HEIGHT);
 			return this;
 		}
 

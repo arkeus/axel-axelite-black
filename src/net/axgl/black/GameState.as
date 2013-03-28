@@ -1,6 +1,7 @@
 package net.axgl.black {
 	import net.axgl.black.assets.Resource;
 	import net.axgl.black.entity.Player;
+	import net.axgl.black.util.Config;
 	import net.axgl.black.world.Tile;
 	import net.axgl.black.world.WorldBuilder;
 	
@@ -18,7 +19,7 @@ package net.axgl.black {
 		private var player:Player;
 		
 		override public function create():void {
-			var builder:WorldBuilder = new WorldBuilder(Resource.MAP_TINY).build();
+			var builder:WorldBuilder = new WorldBuilder(Config.MAP).build();
 			//var builder:WorldBuilder = new WorldBuilder(Resource.MAP).build();
 			for (var i:uint = 0; i < COPIES; i++) {
 				this.add(map = builder.map);

@@ -8,8 +8,8 @@ docs
 .actionScriptProperties
 .project
 .git
-*.psd
-adobe
 org
+adobe
+*.psd
 Thumbs.db
 .DS_Store
