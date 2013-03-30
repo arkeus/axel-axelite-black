@@ -30,25 +30,24 @@ package net.axgl.black.world {
 
 		public function build():WorldBuilder {
 			preprocessPixels();
-			var terrain:String = buildTerrain();
+			var terrain:Array = buildTerrain();
 			map = new AxTilemap;
 			map.build(terrain, Resource.TILESET, Tile.SIZE, Tile.SIZE, 1, Config.SEGMENT_WIDTH, Config.SEGMENT_HEIGHT);
 			return this;
 		}
 
-		private function buildTerrain():String {
-			var rows:Vector.<String> = new Vector.<String>;
-			var row:Vector.<uint> = new Vector.<uint>;
+		private function buildTerrain():Array {
+			var rows:Array = [];
 			for (var y:uint = 0; y < pixels.height; y++) {
-				row.length = 0;
+				var row:Array = [];
 				for (var x:uint = 0; x < pixels.width; x++) {
 					initializeTile(x, y);
 					var tile:uint = getTile();
 					row.push(tile);
 				}
-				rows.push(row.join(","));
+				rows.push(row);
 			}
-			return rows.join("\n");
+			return rows;
 		}
 
 		private function initializeTile(x:uint, y:uint):void {
