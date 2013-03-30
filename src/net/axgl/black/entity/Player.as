@@ -28,6 +28,7 @@ package net.axgl.black.entity {
 		
 		override public function update():void {
 			handleInput();
+			handleFacing();
 			super.update();
 		}
 		
@@ -84,8 +85,9 @@ package net.axgl.black.entity {
 					jumpTimers[i] = JUMP_TIME[i] + 2 * 0.01;
 				}
 			}
-			
-			// Facing
+		}
+		
+		private function handleFacing():void {
 			if (center.x < Ax.mouse.x) {
 				facing = RIGHT;
 			} else {
