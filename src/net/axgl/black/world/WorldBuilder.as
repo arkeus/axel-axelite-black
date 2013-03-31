@@ -3,9 +3,12 @@ package net.axgl.black.world {
 	import flash.display.BitmapData;
 	
 	import net.axgl.black.assets.Resource;
+	import net.axgl.black.entity.Diamond;
 	import net.axgl.black.util.Config;
 	import net.axgl.black.world.Tile;
 	
+	import org.axgl.Ax;
+	import org.axgl.AxGroup;
 	import org.axgl.tilemap.AxTilemap;
 
 	public class WorldBuilder {
@@ -34,6 +37,20 @@ package net.axgl.black.world {
 			map = new AxTilemap;
 			map.build(terrain, Resource.TILESET, Tile.SIZE, Tile.SIZE, 1, Config.SEGMENT_WIDTH, Config.SEGMENT_HEIGHT);
 			return this;
+		}
+		
+		// hardcode simple function to grab coins from top left of image
+		public function diamonds():AxGroup {
+			var group:AxGroup = new AxGroup;
+			for (x = 0; x < Ax.width / Tile.SIZE; x++) {
+				for (y = 0; y < Ax.height / Tile.SIZE; y++) {
+					if (pixels.getPixel(x, y) != 0xff1e1e) {
+						continue;
+					}
+					group.add(new Diamond(x * Tile.SIZE, y * Tile.SIZE));
+				}
+			}
+			return group;
 		}
 
 		private function buildTerrain():Array {

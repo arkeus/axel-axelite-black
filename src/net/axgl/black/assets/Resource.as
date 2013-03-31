@@ -7,5 +7,6 @@ package net.axgl.black.assets {
 		[Embed(source = "world/map_giant.png")] public static const MAP_GIANT:Class;
 		
 		[Embed(source = "entity/player.png")] public static const PLAYER:Class;
+		[Embed(source = "entity/diamond.png")] public static const DIAMOND:Class;
 	}
 }

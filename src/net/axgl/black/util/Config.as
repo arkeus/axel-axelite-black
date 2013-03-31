@@ -5,5 +5,6 @@ package net.axgl.black.util {
 		public static const SEGMENT_WIDTH:uint = 20;
 		public static const SEGMENT_HEIGHT:uint = 20;
 		public static const MAP:Class = Resource.MAP_GIANT;
+		public static const FOLLOW_PLAYER:Boolean = false;
 	}
 }
